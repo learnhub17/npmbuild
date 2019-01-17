@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Widget</title>
+
+  <link rel="stylesheet" href="./static/css/app.css">
+
+</head>
+<body>
+  <div class="container" style="position: relative;">
+    <div class="row justify-content-center spinnerLoader"></div>    
+    <div class="row justify-content-center text-center verificationContainer show">
+      <div class="col-md-7 col-12">
+        <div class="row justify-content-center text-center containerCard">
+          <div class="col-md-12 col-12 logoGradient">
+            <img src="./static/img/white_logo_transparent-01.png" style="width: 120px;float:left;padding-bottom: 5px;" alt="Original4Sure">
+          </div>          
+          <div class="col-md-12 col-12 pt-4">
+            <h1 class="primaryTitle" style="margin-bottom: 0">Verify your product</h2>
+            <h4 class="secondaryTitle" style="font-weight:300; font-size: 1.8rem;margin-top: 0;color: #84929a;">Please enter the unique code *</h4>    
+            <div class="row justify-content-center">
+              <div class="col-md-9 col-12" style="position:relative">
+                <div class="row form-group formContainer" style="margin-bottom: 0">
+                  <input type="text" class="col-md-12 col-11 form-control name reqdField" placeholder="Name">
+                  <span class="reqdAsterisk"> *</span>
+                  <span class="errorMessage nameError hide">Please enter a name</span>
+                </div>
+                <div class="row form-group formContainer" style="margin-bottom: 0">          
+                  <input type="text" class="col-md-12 col-11 form-control uniqueCode reqdField" placeholder="Unique Code">
+                  <span class="reqdAsterisk"> *</span>
+                  <span class="errorMessage codeError hide">Unique code cannot be empty</span>
+                </div>
+                <div class="row form-group formContainer" style="margin-bottom: 0">          
+                  <input type="number" class="col-md-5 col-6 form-control age" placeholder="Age">
+                  <select name="gender" class="col-md-5 col-6 form-control gender" id="gender">
+                    <option value="" disabled selected>Gender</option>
+                    <option value="MALE">MALE</option>
+                    <option value="FEMALE">FEMALE</option>
+                    <option value="OTHERS">OTHERS</option>
+                  </select>
+                </div>
+                
+                <div class="row form-group formContainer" style="margin-bottom: 0">
+                  <input type="number" class="col-md-12 col-11 form-control mobileNumber reqdField" placeholder="Mobile Number">
+                  <span class="reqdAsterisk"> *</span>
+                  <span class="errorMessage mobileError hide">Please enter a valid mobile number</span>
+                </div>
+                <div class="row form-group formContainer" style="margin-bottom: 0">
+                  <input type="text" class="col-md-12 col-11 form-control address reqdField" id="address" placeholder="City, State">
+                  <span class="reqdAsterisk"> *</span>
+                  <span class="errorMessage addressError hide">Please enter a valid address</span>
+                </div>
+                <div class="row form-group formContainer checkboxContainer">
+                  <input type="checkbox" class="rememberMobile">
+                  <label style="font-size: 14px">Remember me</label>
+                </div>
+              </div>
+              <!-- <div class="col-md-5 col-12 gifContainer">
+                <img class="mt-4" id="verificationGif" src="./static/img/verification.gif">
+                <br>
+                <span class="subText text-center">* Unique code can be found on the Security Label under the Scratch</span>          
+
+              </div> -->
+              <div class="col-12" style="position: absolute;left: 0;bottom: -60px;">
+                <div class="row justify-content-center form-group" style="padding: 0">
+                  <button class="col-md-4 col-9 btn verificationSubmit" type="button">VERIFY</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row justify-content-center resultContainer hide">
+      <div class="row justify-content-center" style="width: 100%">
+        <div class="col-md-10 col-12 px-0 containerCard" style="padding-top: 0">
+          <div class="row mediaRow">
+              <div class="col-md-12 col-12 logoGradient" style="min-height: 47.94px;">
+              </div> 
+          </div>
+
+          <div class="row justify-content-center text-center">
+            <div class="col-md-10 col-12">
+            <h1 class="primaryTitle pt-4">Product Verification Result</h1>
+            <div class="row justify-content-center" style="position: relative;">
+              <div class="col-md-5 col-6 productImageContainer">
+                <img class="productImage" src="">
+              </div>
+              <div class="col-md-6 col-6 pr-0">
+                <img class="statusIcon" src="" alt="">
+                <p class="productState"></p>
+                <p class="productName"></p>
+                <p class="productDetails productId"></p>
+                <p class="productDetails expiryDate mb-3"></p>
+                <div class="row">
+                  <div class="col-md-12 col-12 supportBtnContainer supportContainerDesktop">
+                    <span class="invalidMessage"></span>
+                    <div class="row" style="padding: 10px 0">
+                      <div class="col-md-6 col-6" style="padding: 10px 0">
+                        <a href="tel:'18001023313'" target="_blank" style="text-decoration:none" class="btn resultBtn supportBtn">Support Call</a>
+                      </div>
+                      <div class="col-md-6 col-6" style="padding: 10px">
+                        <a href="https://www.original4sure.com/" target="_blank" class="btn resultBtn brandName" style="color: #fff; text-decoration: none">
+                          Know more
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 col-12 supportBtnContainer supportContainerMobile">
+                <span class="invalidMessage"></span>
+                <div class="row" style="padding: 10px 0">
+                  <div class="col-md-6 col-6" style="padding: 10px 0">
+                    <a href="tel:'18001023313'" target="_blank" style="text-decoration:none" class="btn resultBtn supportBtn">Support Call</a>
+                  </div>
+                  <div class="col-md-6 col-6" style="padding: 10px">
+                    <a href="https://www.original4sure.com/" target="_blank" class="btn resultBtn brandName" style="color: #fff; text-decoration: none">
+                      Know more
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr>
+
+            <!-- Render template specific content here -->
+            <div id="renderTemplate"></div>
+            
+            </div>
+          </div>
+          <hr id="hidden-hr">
+          <div class="row justify-content-center">
+            <button type="button" class="btn btn-sm btn-secondary col-md-5 col-11 resetVerifyBtn">Verify Another Product</button>
+          </div>
+
+
+        </div>
+        <div class="col-md-10 col-12 text-right" style="padding-left:0">
+          <span class="text-secondary" style="font-size: 12px;font-weight: 500;color: #6c757d;">Powered by <strong style="color:#333">ORIGINAL4SURE</strong></span>
+        </div>
+      </div>
+
+    </div>        
+  </div>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADOuhidOeHF6aHgi_RrQFxKY-4DJ39MkE&libraries=places"></script>
+  <!-- <script src=""></script> -->
+  <script src="./static/js/app.js"></script>
+</body>
+</html>
