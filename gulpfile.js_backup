@@ -43,7 +43,7 @@ gulp.task('watch', function(){
 });
 
 gulp.task('copyHtml', function(){
-  gulp.src(['./src/index.html'])
+  gulp.src(['./src/index.html', './src/templates/'])
   .pipe(gulp.dest('./dist/'));
 })
 
